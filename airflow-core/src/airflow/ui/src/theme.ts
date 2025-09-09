@@ -379,20 +379,19 @@ export const customConfig = defineConfig({
         stone: generateSemanticTokens("stone"),
         // Task state components - unified colors across all uses
         taskState: {
-          active: generateSemanticTokens("blue"),
-          success: generateSemanticTokens("green"),
-          failed: generateSemanticTokens("red"),
-          queued: generateSemanticTokens("stone"),
-          skipped: generateSemanticTokens("pink"),
-          up_for_reschedule: generateSemanticTokens("sky"),
-          up_for_retry: generateSemanticTokens("yellow"),
-          upstream_failed: generateSemanticTokens("orange"),
-          running: generateSemanticTokens("cyan"),
-          restarting: generateSemanticTokens("violet"),
-          deferred: generateSemanticTokens("purple"),
-          scheduled: generateSemanticTokens("zinc"),
-          none: generateSemanticTokens("gray"),
-          removed: generateSemanticTokens("slate"),
+          success: generateSemanticTokens("success"),
+          failed: generateSemanticTokens("failed"),
+          running: generateSemanticTokens("running"),
+          queued: generateSemanticTokens("queued"),
+          scheduled: generateSemanticTokens("scheduled"),
+          skipped: generateSemanticTokens("skipped"),
+          up_for_retry: generateSemanticTokens("up_for_retry"),
+          up_for_reschedule: generateSemanticTokens("up_for_reschedule"),
+          upstream_failed: generateSemanticTokens("upstream_failed"),
+          restarting: generateSemanticTokens("restarting"),
+          deferred: generateSemanticTokens("deferred"),
+          removed: generateSemanticTokens("removed"),
+          none: generateSemanticTokens("none"),
         },
         // Pool and slot management
         pool: {
@@ -445,20 +444,21 @@ export const customConfig = defineConfig({
         },
         // Calendar visualization tokens
         calendar: {
-          empty: { value: { _dark: "transparent", _light: "transparent" } },
           totalRuns: {
-            level1: { value: { _dark: "{colors.brand.300}", _light: "{colors.brand.200}" } }, // 1-5 runs
-            level2: { value: { _dark: "{colors.brand.500}", _light: "{colors.brand.400}" } }, // 6-15 runs
-            level3: { value: { _dark: "{colors.brand.700}", _light: "{colors.brand.600}" } }, // 16-25 runs
-            level4: { value: { _dark: "{colors.brand.900}", _light: "{colors.brand.800}" } }, // 26+ runs
+            level0: { value: { _dark: "transparent", _light: "transparent" } }, // 0 runs
+            level1: { value: { _dark: "{colors.blue.300}", _light: "{colors.blue.200}" } }, // 1-5 runs
+            level2: { value: { _dark: "{colors.blue.500}", _light: "{colors.blue.400}" } }, // 6-15 runs
+            level3: { value: { _dark: "{colors.blue.700}", _light: "{colors.blue.600}" } }, // 16-25 runs
+            level4: { value: { _dark: "{colors.blue.900}", _light: "{colors.blue.800}" } }, // 26+ runs
           },
           failedRuns: {
-            level1: { value: { _dark: "{colors.red.300}", _light: "{colors.red.200}" } }, // 1-2 failures
-            level2: { value: { _dark: "{colors.red.500}", _light: "{colors.red.400}" } }, // 3-5 failures
-            level3: { value: { _dark: "{colors.red.700}", _light: "{colors.red.600}" } }, // 6-10 failures
-            level4: { value: { _dark: "{colors.red.900}", _light: "{colors.red.800}" } }, // 11+ failures
+            level0: { value: { _dark: "transparent", _light: "transparent" } }, // 0 failures
+            level1: { value: { _dark: "{colors.failed.300}", _light: "{colors.failed.200}" } }, // 1-2 failures
+            level2: { value: { _dark: "{colors.failed.500}", _light: "{colors.failed.400}" } }, // 3-5 failures
+            level3: { value: { _dark: "{colors.failed.700}", _light: "{colors.failed.600}" } }, // 6-10 failures
+            level4: { value: { _dark: "{colors.failed.900}", _light: "{colors.failed.800}" } }, // 11+ failures
           },
-          planned: { value: { _dark: "{colors.scheduled.600}", _light: "{colors.scheduled.200}" } },
+          planned: { value: { _dark: "{colors.scheduled.solid}", _light: "{colors.scheduled.emphasized}" } },
           loading: {
             overlay: { value: "{colors.bg.subtle}" },
             spinner: {
