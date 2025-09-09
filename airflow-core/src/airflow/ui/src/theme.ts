@@ -466,424 +466,35 @@ export const customConfig = defineConfig({
             },
           },
         },
-        // General loading and overlay tokens
-        loading: {
-          overlay: { value: "{colors.bg.subtle}" },
-          spinner: {
-            border: { value: "{colors.border.emphasized}" },
-            borderTop: { value: "{colors.brand.solid}" },
-          },
-        },
-        // Human-in-the-loop (HITL) tokens
-        hitl: {
-          background: { value: "{colors.warning.subtle}" },
-          border: { value: "{colors.warning.solid}" },
-          text: { value: "{colors.warning.fg}" },
-          button: { value: "{colors.warning.solid}" },
-          buttonHover: { value: "{colors.warning.emphasized}" },
-          form: { value: "{colors.bg.subtle}" },
-          response: { value: "{colors.success.solid}" },
-        },
-        // Application semantic tokens
-        app: {
-          // Layout components
-          baseLayout: {
-            background: { value: "{colors.bg}" },
-            content: { value: "{colors.bg}" },
-            sidebar: { value: "{colors.brand.muted}" },
-          },
-          nav: {
-            background: { value: "{colors.brand.muted}" },
-            button: { value: "{colors.brand.solid}" },
-            buttonHover: { value: "{colors.brand.emphasized}" },
-            buttonActive: { value: "{colors.brand.fg}" },
-          },
-          detailsLayout: {
-            background: { value: "{colors.bg}" },
-            panel: { value: "{colors.bg.subtle}" },
-            breadcrumb: { value: "{colors.gray.muted}" },
-            tabs: { value: "{colors.gray.solid}" },
-            toggleButton: { value: "{colors.fg.subtle}" },
-            resizeHandle: { value: "{colors.border.emphasized}" },
-          },
-          // Page components
-          dashboard: {
-            background: { value: "{colors.bg}" },
-            card: { value: "{colors.bg.subtle}" },
-            metric: { value: "{colors.brand.solid}" },
-            health: { value: "{colors.success.solid}" },
-            warning: { value: "{colors.warning.solid}" },
-            error: { value: "{colors.error.solid}" },
-          },
-          dagsList: {
-            background: { value: "{colors.bg}" },
-            card: { value: "{colors.bg.subtle}" },
-            cardHover: { value: "{colors.bg.emphasized}" },
-            filter: { value: "{colors.gray.muted}" },
-            sort: { value: "{colors.gray.solid}" },
-          },
-          dagDetails: {
-            background: { value: "{colors.bg}" },
-            header: { value: "{colors.bg.subtle}" },
-            overview: { value: "{colors.bg.subtle}" },
-            tasks: { value: "{colors.bg.subtle}" },
-            calendar: { value: "{colors.bg.subtle}" },
-            code: { value: "{colors.bg.subtle}" },
-            backfills: { value: "{colors.bg.subtle}" },
-          },
-          dagGraph: {
-            reactflow: {
-              background: {
-                value: {
-                  _light: "{colors.brand.50}",
-                  _dark: "{colors.brand.950}"
-                }
-              },
-              backgroundPattern: {
-                value: {
-                  _light: "{colors.gray.800}",
-                  _dark: "{colors.gray.200}"
-                }
-              },
-              controlsButton: {
-                value: {
-                  _light: "white",
-                  _dark: "{colors.gray.800}"
-                }
-              },
-              controlsButtonHover: {
-                value: {
-                  _light: "{colors.gray.100}",
-                  _dark: "{colors.gray.700}"
-                }
-              },
-              minimapBackground: {
-                value: "{colors.bg}"
-              },
+        // ReactFlow specific tokens (used by getReactFlowThemeStyle)
+        dagGraph: {
+          reactflow: {
+            background: {
+              value: {
+                _light: "{colors.brand.50}",
+                _dark: "{colors.brand.950}"
+              }
             },
-          },
-          tasksList: {
-            background: { value: "{colors.bg}" },
-            card: { value: "{colors.bg.subtle}" },
-            filter: { value: "{colors.gray.muted}" },
-          },
-          taskDetails: {
-            background: { value: "{colors.bg}" },
-            header: { value: "{colors.bg.subtle}" },
-            overview: { value: "{colors.bg.subtle}" },
-            logs: { value: "{colors.bg.subtle}" },
-          },
-          taskInstance: {
-            background: { value: "{colors.bg}" },
-            header: { value: "{colors.bg.subtle}" },
-            details: { value: "{colors.bg.subtle}" },
-            logs: { value: "{colors.bg.subtle}" },
-          },
-          assetsList: {
-            background: { value: "{colors.bg}" },
-            card: { value: "{colors.bg.subtle}" },
-            dependency: { value: "{colors.brand.solid}" },
-          },
-          assetDetails: {
-            background: { value: "{colors.bg}" },
-            header: { value: "{colors.bg.subtle}" },
-            graph: { value: "{colors.bg.subtle}" },
-            events: { value: "{colors.bg.subtle}" },
-          },
-          connections: {
-            background: { value: "{colors.bg}" },
-            form: { value: "{colors.bg.subtle}" },
-            button: { value: "{colors.brand.solid}" },
-            buttonHover: { value: "{colors.brand.emphasized}" },
-          },
-          variables: {
-            background: { value: "{colors.bg}" },
-            form: { value: "{colors.bg.subtle}" },
-            button: { value: "{colors.brand.solid}" },
-            buttonHover: { value: "{colors.brand.emphasized}" },
-          },
-          pools: {
-            background: { value: "{colors.bg}" },
-            form: { value: "{colors.bg.subtle}" },
-            button: { value: "{colors.brand.solid}" },
-            buttonHover: { value: "{colors.brand.emphasized}" },
-          },
-          events: {
-            background: { value: "{colors.bg}" },
-            filter: { value: "{colors.gray.muted}" },
-          },
-          xcom: {
-            background: { value: "{colors.bg}" },
-            entry: { value: "{colors.bg.subtle}" },
-            filter: { value: "{colors.gray.muted}" },
-          },
-          configs: {
-            background: { value: "{colors.bg}" },
-            form: { value: "{colors.bg.subtle}" },
-          },
-          providers: {
-            background: { value: "{colors.bg}" },
-          },
-          plugins: {
-            background: { value: "{colors.bg}" },
-          },
-          security: {
-            background: { value: "{colors.bg}" },
-          },
-          // Shared components
-          dataDisplay: {
-            breadcrumbStats: { value: "{colors.gray.solid}" },
-            dagRunInfo: { value: "{colors.brand.solid}" },
-            dagVersion: { value: "{colors.gray.solid}" },
-            durationChart: { value: "{colors.brand.solid}" },
-            headerCard: { value: "{colors.bg.subtle}" },
-            limitedItemsList: { value: "{colors.gray.solid}" },
-            needsReviewBadge: { value: "{colors.warning.solid}" },
-            needsReviewButton: { value: "{colors.warning.solid}" },
-            poolBar: { value: "{colors.brand.solid}" },
-            renderedJsonField: { value: "{colors.gray.solid}" },
-            runTypeIcon: { value: "{colors.brand.solid}" },
-            stateBadge: { value: "{colors.success.solid}" },
-            stateIcon: { value: "{colors.success.solid}" },
-            statsCard: { value: "{colors.bg.subtle}" },
-            taskInstanceTooltip: { value: "{colors.gray.solid}" },
-            taskName: { value: "{colors.brand.solid}" },
-            taskTrySelect: { value: "{colors.gray.solid}" },
-            time: { value: "{colors.gray.solid}" },
-            timeRangeSelector: { value: "{colors.gray.solid}" },
-            trendCountButton: { value: "{colors.brand.solid}" },
-            trendCountChart: { value: "{colors.brand.solid}" },
-            truncatedText: { value: "{colors.gray.solid}" },
-          },
-          forms: {
-            configForm: { value: "{colors.bg.subtle}" },
-            dateTimeInput: { value: "{colors.gray.solid}" },
-            editableMarkdownArea: { value: "{colors.bg.subtle}" },
-            editableMarkdownButton: { value: "{colors.brand.solid}" },
-            jsonEditor: { value: "{colors.bg.subtle}" },
-            searchBar: { value: "{colors.gray.muted}" },
-            searchDags: { value: "{colors.brand.solid}" },
-            searchDagsButton: { value: "{colors.brand.solid}" },
-            searchDagsDropdown: { value: "{colors.gray.solid}" },
-          },
-          modals: {
-            confirmationModal: { value: "{colors.bg.subtle}" },
-            deleteDialog: { value: "{colors.error.solid}" },
-            displayMarkdownButton: { value: "{colors.brand.solid}" },
-            displayMarkdownHeader: { value: "{colors.info.muted}" },
-          },
-          alerts: {
-            errorAlert: { value: "{colors.error.solid}" },
-            warningAlert: { value: "{colors.warning.solid}" },
-          },
-          actions: {
-            clear: {
-              run: {
-                button: { value: "{colors.error.solid}" },
-                dialog: { value: "{colors.error.solid}" },
-              },
-              taskInstance: {
-                button: { value: "{colors.error.solid}" },
-                dialog: { value: "{colors.error.solid}" },
-                groupDialog: { value: "{colors.error.solid}" },
-              },
+            backgroundPattern: {
+              value: {
+                _light: "{colors.gray.800}",
+                _dark: "{colors.gray.200}"
+              }
             },
-            dagActions: {
-              deleteDagButton: { value: "{colors.error.solid}" },
-              favoriteDagButton: { value: "{colors.brand.solid}" },
-              inlineMessage: { value: "{colors.gray.solid}" },
-              parseDag: { value: "{colors.brand.solid}" },
-              runBackfillForm: { value: "{colors.brand.solid}" },
+            controlsButton: {
+              value: {
+                _light: "white",
+                _dark: "{colors.gray.800}"
+              }
             },
-            markAs: {
-              run: {
-                button: { value: "{colors.brand.solid}" },
-                dialog: { value: "{colors.brand.solid}" },
-              },
-              taskInstance: {
-                button: { value: "{colors.brand.solid}" },
-                dialog: { value: "{colors.brand.solid}" },
-                groupDialog: { value: "{colors.brand.solid}" },
-              },
+            controlsButtonHover: {
+              value: {
+                _light: "{colors.gray.100}",
+                _dark: "{colors.gray.700}"
+              }
             },
-            triggerDag: {
-              button: { value: "{colors.brand.solid}" },
-              form: { value: "{colors.brand.solid}" },
-              modal: { value: "{colors.brand.solid}" },
-              editableMarkdown: { value: "{colors.brand.solid}" },
-            },
-            togglePause: { value: "{colors.warning.solid}" },
-            quickFilterButton: { value: "{colors.gray.solid}" },
-          },
-          dataTable: {
-            background: { value: "{colors.bg}" },
-            cardList: { value: "{colors.bg.subtle}" },
-            tableList: { value: "{colors.bg.subtle}" },
-            filterMenuButton: { value: "{colors.gray.solid}" },
-            toggleTableDisplay: { value: "{colors.gray.solid}" },
-            skeleton: { value: "{colors.gray.muted}" },
-          },
-          flexibleForm: {
-            background: { value: "{colors.bg.subtle}" },
-            fieldAdvancedArray: { value: "{colors.gray.solid}" },
-            fieldBool: { value: "{colors.gray.solid}" },
-            fieldDateTime: { value: "{colors.gray.solid}" },
-            fieldDropdown: { value: "{colors.gray.solid}" },
-            fieldMultilineText: { value: "{colors.gray.solid}" },
-            fieldMultiSelect: { value: "{colors.gray.solid}" },
-            fieldNumber: { value: "{colors.gray.solid}" },
-            fieldObject: { value: "{colors.gray.solid}" },
-            fieldRow: { value: "{colors.gray.solid}" },
-            fieldSelector: { value: "{colors.gray.solid}" },
-            fieldString: { value: "{colors.gray.solid}" },
-            fieldStringArray: { value: "{colors.gray.solid}" },
-            hiddenInput: { value: "{colors.gray.solid}" },
-            row: { value: "{colors.gray.solid}" },
-            isParamRequired: { value: "{colors.error.solid}" },
-          },
-          graph: {
-            aliasNode: { value: "{colors.brand.solid}" },
-            assetConditionNode: { value: "{colors.brand.solid}" },
-            assetNode: { value: "{colors.brand.solid}" },
-            dagNode: { value: "{colors.brand.solid}" },
-            defaultNode: { value: "{colors.gray.solid}" },
-            downloadButton: { value: "{colors.brand.solid}" },
-            edge: { value: "{colors.gray.solid}" },
-            joinNode: { value: "{colors.brand.solid}" },
-            nodeWrapper: { value: "{colors.bg.subtle}" },
-            taskLink: { value: "{colors.brand.solid}" },
-            taskNode: { value: "{colors.brand.solid}" },
-          },
-          asset: {
-            expression: { value: "{colors.brand.solid}" },
-            node: { value: "{colors.brand.solid}" },
-            andGateNode: { value: "{colors.brand.solid}" },
-            orGateNode: { value: "{colors.brand.solid}" },
-            event: { value: "{colors.brand.solid}" },
-            events: { value: "{colors.brand.solid}" },
-            triggeredRuns: { value: "{colors.brand.solid}" },
-          },
-          banner: {
-            backfillBanner: { value: "{colors.warning.solid}" },
-          },
-          actionAccordion: {
-            background: { value: "{colors.bg.subtle}" },
-            columns: { value: "{colors.gray.solid}" },
-          },
-          utility: {
-            reactMarkdown: { value: "{colors.gray.solid}" },
-            stat: { value: "{colors.brand.solid}" },
-          },
-          // Search and filtering components
-          search: {
-            searchBar: { value: "{colors.gray.muted}" },
-            searchButton: { value: "{colors.brand.solid}" },
-            searchDropdown: { value: "{colors.gray.solid}" },
-            filterButton: { value: "{colors.gray.solid}" },
-            filterMenu: { value: "{colors.bg.subtle}" },
-            quickFilter: { value: "{colors.gray.solid}" },
-          },
-          // Navigation and breadcrumb components
-          navigation: {
-            breadcrumb: { value: "{colors.gray.solid}" },
-            breadcrumbActive: { value: "{colors.brand.solid}" },
-            breadcrumbSeparator: { value: "{colors.gray.muted}" },
-            navButton: { value: "{colors.brand.solid}" },
-            navButtonActive: { value: "{colors.brand.fg}" },
-            navButtonHover: { value: "{colors.brand.emphasized}" },
-          },
-          // Time and date components
-          time: {
-            timeDisplay: { value: "{colors.gray.solid}" },
-            timeRangeSelector: { value: "{colors.gray.solid}" },
-            timezoneSelector: { value: "{colors.gray.solid}" },
-            dateTimeInput: { value: "{colors.gray.solid}" },
-          },
-          // Log and code display components
-          logs: {
-            background: { value: "{colors.bg.subtle}" },
-            text: { value: "{colors.gray.solid}" },
-            error: { value: "{colors.error.solid}" },
-            warning: { value: "{colors.warning.solid}" },
-            info: { value: "{colors.info.solid}" },
-            debug: { value: "{colors.gray.muted}" },
-            lineNumber: { value: "{colors.gray.muted}" },
-            timestamp: { value: "{colors.gray.muted}" },
-            level: { value: "{colors.brand.solid}" },
-          },
-          // Code display components
-          code: {
-            background: { value: "{colors.bg.subtle}" },
-            text: { value: "{colors.gray.solid}" },
-            keyword: { value: "{colors.brand.solid}" },
-            string: { value: "{colors.success.solid}" },
-            comment: { value: "{colors.gray.muted}" },
-            number: { value: "{colors.warning.solid}" },
-            function: { value: "{colors.info.solid}" },
-            variable: { value: "{colors.gray.solid}" },
-            lineNumber: { value: "{colors.gray.muted}" },
-          },
-          // UI component semantic tokens
-          ui: {
-            chakra: {
-              button: { value: "{colors.brand.solid}" },
-              actionButton: { value: "{colors.brand.solid}" },
-              checkbox: { value: "{colors.brand.solid}" },
-              closeButton: { value: "{colors.gray.solid}" },
-              inputGroup: { value: "{colors.gray.muted}" },
-              numberInput: { value: "{colors.gray.solid}" },
-              progressBar: { value: "{colors.brand.solid}" },
-              radioCard: { value: "{colors.brand.solid}" },
-              resetButton: { value: "{colors.gray.solid}" },
-              segmentedControl: { value: "{colors.brand.solid}" },
-              switch: { value: "{colors.brand.solid}" },
-              tag: { value: "{colors.brand.solid}" },
-              tooltip: { value: "{colors.gray.solid}" },
-              accordion: { value: "{colors.bg.subtle}" },
-              accordionItem: { value: "{colors.bg.subtle}" },
-              accordionButton: { value: "{colors.brand.solid}" },
-              alert: { value: "{colors.warning.solid}" },
-              breadcrumb: { value: "{colors.gray.solid}" },
-              clipboard: { value: "{colors.brand.solid}" },
-              dialog: { value: "{colors.bg.subtle}" },
-              dialogHeader: { value: "{colors.bg.subtle}" },
-              dialogBody: { value: "{colors.bg.subtle}" },
-              dialogFooter: { value: "{colors.bg.subtle}" },
-              fileUpload: { value: "{colors.brand.solid}" },
-              fileUploadButton: { value: "{colors.brand.solid}" },
-              fileUploadDropzone: { value: "{colors.brand.solid}" },
-              fileUploadPreview: { value: "{colors.brand.solid}" },
-              fileUploadProgress: { value: "{colors.brand.solid}" },
-              fileUploadError: { value: "{colors.error.solid}" },
-              menu: { value: "{colors.bg.subtle}" },
-              menuItem: { value: "{colors.gray.solid}" },
-              pagination: { value: "{colors.brand.solid}" },
-              paginationButton: { value: "{colors.brand.solid}" },
-              paginationEllipsis: { value: "{colors.gray.solid}" },
-              paginationFirst: { value: "{colors.brand.solid}" },
-              paginationLast: { value: "{colors.brand.solid}" },
-              paginationNext: { value: "{colors.brand.solid}" },
-              paginationPrevious: { value: "{colors.brand.solid}" },
-              paginationInfo: { value: "{colors.gray.solid}" },
-              paginationSizeSelector: { value: "{colors.gray.solid}" },
-              popover: { value: "{colors.bg.subtle}" },
-              popoverTrigger: { value: "{colors.brand.solid}" },
-              popoverContent: { value: "{colors.bg.subtle}" },
-              popoverArrow: { value: "{colors.bg.subtle}" },
-              select: { value: "{colors.gray.solid}" },
-              selectTrigger: { value: "{colors.gray.solid}" },
-              selectContent: { value: "{colors.bg.subtle}" },
-              selectItem: { value: "{colors.gray.solid}" },
-              selectLabel: { value: "{colors.gray.solid}" },
-              selectSeparator: { value: "{colors.gray.muted}" },
-              selectGroup: { value: "{colors.gray.solid}" },
-              toaster: { value: "{colors.bg.subtle}" },
-              toast: { value: "{colors.bg.subtle}" },
-            },
-            airflow: {
-              actionBar: { value: "{colors.bg.subtle}" },
-              actionBarItem: { value: "{colors.brand.solid}" },
-              dagWarningsModal: { value: "{colors.warning.solid}" },
+            minimapBackground: {
+              value: "{colors.bg}"
             },
           },
         },
@@ -921,14 +532,14 @@ export const getComputedCSSVariableValue = (variable: string): string =>
 export const getReactFlowThemeStyle = (): CSSProperties =>
   ({
     // Background
-    "--xy-background-color": "var(--chakra-colors-app-dagGraph-reactflow-background)",
-    "--xy-background-pattern-color": "var(--chakra-colors-app-dagGraph-reactflow-backgroundPattern)",
+    "--xy-background-color": "var(--chakra-colors-dagGraph-reactflow-background)",
+    "--xy-background-pattern-color": "var(--chakra-colors-dagGraph-reactflow-backgroundPattern)",
 
     // Controls
-    "--xy-controls-button-background-color": "var(--chakra-colors-app-dagGraph-reactflow-controlsButton)",
-    "--xy-controls-button-background-color-hover": "var(--chakra-colors-app-dagGraph-reactflow-controlsButtonHover)",
+    "--xy-controls-button-background-color": "var(--chakra-colors-dagGraph-reactflow-controlsButton)",
+    "--xy-controls-button-background-color-hover": "var(--chakra-colors-dagGraph-reactflow-controlsButtonHover)",
 
     // MiniMap
-    "--xy-minimap-background-color": "var(--chakra-colors-app-dagGraph-reactflow-minimapBackground)",
+    "--xy-minimap-background-color": "var(--chakra-colors-dagGraph-reactflow-minimapBackground)",
 
   }) as CSSProperties;
