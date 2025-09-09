@@ -40,7 +40,7 @@ const DeletePoolButton = ({ poolName, withText = false }: Props) => {
     <>
       <ActionButton
         actionName={translate("pools.delete.title")}
-        colorPalette="danger"
+        colorPalette="red"
         icon={<FiTrash2 />}
         onClick={onOpen}
         text={translate("pools.delete.warning")}

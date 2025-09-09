@@ -37,7 +37,7 @@ const DeleteVariablesButton = ({ clearSelections, deleteKeys: variableKeys }: Pr
   return (
     <>
       <Button
-        colorPalette="danger"
+        colorPalette="red"
         onClick={() => {
           onOpen();
         }}
@@ -75,7 +75,7 @@ const DeleteVariablesButton = ({ clearSelections, deleteKeys: variableKeys }: Pr
             <ErrorAlert error={error} />
             <Flex justifyContent="end" mt={3}>
               <Button
-                colorPalette="danger"
+                colorPalette="red"
                 loading={isPending}
                 onClick={() => {
                   mutate({

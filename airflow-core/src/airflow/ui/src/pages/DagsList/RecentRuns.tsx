@@ -91,7 +91,7 @@ export const RecentRuns = ({
           <Link to={`/dags/${run.dag_id}/runs/${run.dag_run_id}/`}>
             <Box px={1}>
               <Box
-                bg={`${run.state}.solid`}
+                bg={`taskState.${run.state}.solid`}
                 borderRadius="4px"
                 height={`${(run.duration / max) * BAR_HEIGHT}px`}
                 minHeight={1}

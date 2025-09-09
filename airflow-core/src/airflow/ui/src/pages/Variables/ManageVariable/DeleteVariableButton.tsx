@@ -40,7 +40,7 @@ const DeleteVariableButton = ({ deleteKey: variableKey, disabled }: Props) => {
     <>
       <ActionButton
         actionName={translate("variables.delete.title")}
-        colorPalette="danger"
+        colorPalette="red"
         disabled={disabled}
         icon={<FiTrash />}
         onClick={() => {
@@ -48,6 +48,10 @@ const DeleteVariableButton = ({ deleteKey: variableKey, disabled }: Props) => {
         }}
         text={translate("variables.delete.title")}
         withText={false}
+        _hover={{ 
+          bg: "state.danger.emphasized",
+          color: "state.danger.contrast"
+        }}
       />
 
       <Dialog.Root onOpenChange={onClose} open={open} size="xl">
@@ -73,7 +77,7 @@ const DeleteVariableButton = ({ deleteKey: variableKey, disabled }: Props) => {
             </Text>
             <Flex justifyContent="end" mt={3}>
               <Button
-                colorPalette="danger"
+                colorPalette="red"
                 loading={isPending}
                 onClick={() => {
                   mutate({

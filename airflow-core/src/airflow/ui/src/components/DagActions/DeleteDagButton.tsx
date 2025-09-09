@@ -47,7 +47,7 @@ const DeleteDagButton = ({ dagDisplayName, dagId, width, withText = true }: Dele
     <Box width={width}>
       <ActionButton
         actionName={translate("dagActions.delete.button")}
-        colorPalette="danger"
+        colorPalette="red"
         icon={<FiTrash2 />}
         onClick={onOpen}
         text={translate("dagActions.delete.button")}

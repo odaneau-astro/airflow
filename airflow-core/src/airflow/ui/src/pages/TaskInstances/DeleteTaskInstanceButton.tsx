@@ -50,7 +50,7 @@ const DeleteTaskInstanceButton = ({ taskInstance, withText = true }: DeleteTaskI
         actionName={translate("dags:runAndTaskActions.delete.button", {
           type: translate("taskInstance_one"),
         })}
-        colorPalette="danger"
+        colorPalette="red"
         icon={<FiTrash2 />}
         onClick={onOpen}
         text={translate("dags:runAndTaskActions.delete.button", { type: translate("taskInstance_one") })}

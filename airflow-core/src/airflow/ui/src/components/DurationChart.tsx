@@ -67,7 +67,7 @@ export const DurationChart = ({
 }) => {
   const { t: translate } = useTranslation(["components", "common"]);
   const navigate = useNavigate();
-  const [queuedColorToken] = useToken("colors", ["queued.solid"]);
+  const [queuedColorToken] = useToken("colors", ["taskState.queued.solid"]);
 
   if (!entries) {
     return undefined;
@@ -77,7 +77,7 @@ export const DurationChart = ({
   const states = entries.map((entry) => entry.state).filter(Boolean);
   const stateColorTokens = useToken(
     "colors",
-    states.map((state) => `${state}.solid`),
+    states.map((state) => `taskState.${state}.solid`),
   );
 
   // Create a mapping of state to color for easy lookup

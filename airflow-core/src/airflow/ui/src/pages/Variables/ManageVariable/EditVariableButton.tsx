@@ -61,6 +61,10 @@ const EditVariableButton = ({ disabled, variable }: Props) => {
         }}
         text={translate("variables.edit")}
         withText={false}
+        _hover={{ 
+          bg: "brand.emphasized",
+          color: "brand.contrast"
+        }}
       />
 
       <Dialog.Root onOpenChange={handleClose} open={open} size="xl">

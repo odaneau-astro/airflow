@@ -23,7 +23,6 @@ import { Link as RouterLink } from "react-router-dom";
 import type { HITLDetail } from "openapi/requests/types.gen";
 import { StateBadge } from "src/components/StateBadge";
 import { Tooltip } from "src/components/ui";
-import { SearchParamsKeys } from "src/constants/searchParams";
 
 type Props = {
   readonly dagId: string;
@@ -39,8 +38,8 @@ export const NeedsReviewBadge = ({ dagId, pendingActions }: Props) => {
 
   return (
     <Tooltip content={translate("requiredActionCount", { count: pendingActions.length })}>
-      <RouterLink to={`/dags/${dagId}/required_actions?${SearchParamsKeys.RESPONSE_RECEIVED}=false`}>
-        <StateBadge colorPalette="deferred" fontSize="md" variant="solid">
+      <RouterLink to={`/dags/${dagId}/required_actions?response_received=false`}>
+        <StateBadge colorPalette="taskState.deferred" fontSize="md" variant="solid">
           <LuUserRoundPen />
           {pendingActions.length}
         </StateBadge>

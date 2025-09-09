@@ -122,7 +122,7 @@ const Instance = ({ dagId, instance, isGroup, isMapped, onClick, runId, search, 
           <Badge
             alignItems="center"
             borderRadius={4}
-            colorPalette={instance.state ?? "none"}
+            colorPalette={instance.state ? `taskState.${instance.state}` : "taskState.none"}
             display="flex"
             height="14px"
             justifyContent="center"

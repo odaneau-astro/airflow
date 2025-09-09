@@ -49,7 +49,7 @@ export const DAGImportErrors = ({ iconOnly = false }: { readonly iconOnly?: bool
       {iconOnly ? (
         <StateBadge
           as={Button}
-          colorPalette="failed"
+          colorPalette="taskState.failed"
           height={7}
           onClick={onOpen}
           title={translate("importErrors.dagImportError", { count: importErrorsCount })}

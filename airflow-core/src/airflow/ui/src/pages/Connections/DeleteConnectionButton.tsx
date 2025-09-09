@@ -40,7 +40,7 @@ const DeleteConnectionButton = ({ connectionId, disabled }: Props) => {
     <>
       <ActionButton
         actionName={translate("connections.delete.title")}
-        colorPalette="danger"
+        colorPalette="red"
         disabled={disabled}
         icon={<FiTrash />}
         onClick={() => {
@@ -73,7 +73,7 @@ const DeleteConnectionButton = ({ connectionId, disabled }: Props) => {
             </Text>
             <Flex justifyContent="end" mt={3}>
               <Button
-                colorPalette="danger"
+                colorPalette="red"
                 loading={isPending}
                 onClick={() => {
                   mutate({

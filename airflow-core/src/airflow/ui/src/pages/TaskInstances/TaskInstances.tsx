@@ -79,7 +79,7 @@ const taskInstanceColumns = ({
           // If we don't show the taskId column, make the dag run a link to the task instance
           cell: ({ row: { original } }: TaskInstanceRow) =>
             Boolean(taskId) ? (
-              <Link asChild color="fg.info" fontWeight="bold">
+              <Link asChild color="fg.state.info" fontWeight="bold">
                 <RouterLink to={getTaskInstanceLink(original)}>
                   <Time datetime={original.run_after} />
                 </RouterLink>
@@ -96,7 +96,7 @@ const taskInstanceColumns = ({
         {
           accessorKey: "task_display_name",
           cell: ({ row: { original } }: TaskInstanceRow) => (
-            <Link asChild color="fg.info" fontWeight="bold">
+            <Link asChild color="fg.state.info" fontWeight="bold">
               <RouterLink to={getTaskInstanceLink(original)}>
                 <TruncatedText text={original.task_display_name} />
               </RouterLink>
@@ -127,7 +127,7 @@ const taskInstanceColumns = ({
     accessorKey: "start_date",
     cell: ({ row: { original } }) =>
       Boolean(taskId) && Boolean(runId) ? (
-        <Link asChild color="fg.info" fontWeight="bold">
+        <Link asChild color="fg.state.info" fontWeight="bold">
           <RouterLink to={getTaskInstanceLink(original)}>
             <Time datetime={original.start_date} />
           </RouterLink>

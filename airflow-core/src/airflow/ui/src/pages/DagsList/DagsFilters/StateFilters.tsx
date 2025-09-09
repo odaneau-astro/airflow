@@ -91,7 +91,7 @@ export const StateFilters = ({
         onClick={onStateChange}
         value="needs_review"
       >
-        <StateBadge colorPalette="deferred">
+        <StateBadge colorPalette="taskState.deferred">
           <LuUserRoundPen />
         </StateBadge>
         {translate("hitl:requiredAction_other")}
